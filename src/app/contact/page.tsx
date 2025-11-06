@@ -1,3 +1,5 @@
+"use client"
+
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import ContactForm from '@/components/ContactForm/ContactForm'
