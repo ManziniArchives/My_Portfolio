@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Hero from '@/components/Hero/Hero'
+import Footer from '@/components/Footer/Footer'
 import { personalInfo } from '@/data/personalInfo'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
