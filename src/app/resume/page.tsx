@@ -49,19 +49,30 @@ export default function Resume() {
             Resume & CV
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Download my complete resume or view the key information below. Feel free to reach out
+            Choose to view my resume online in a new tab or download it directly. You can also explore key information below. Feel free to reach out
             if you'd like to discuss my qualifications in more detail.
           </p>
 
-          <Button
-            href={resumeUrl}
-            download="Musawenkosi-Manzini-Resume.pdf"
-            variant="primary"
-            className="inline-flex items-center text-lg px-8 py-4"
-          >
-            <FaDownload className="mr-2" />
-            Download Resume (PDF)
-          </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href={resumeUrl}
+                target="_blank"
+                variant="primary"
+                className="inline-flex items-center text-lg px-8 py-4"
+              >
+                <FaDownload className="mr-2" />
+                View Resume (PDF)
+              </Button>
+              <Button
+                href={resumeUrl}
+                download="Musawenkosi-Manzini-Resume.pdf"
+                variant="outline"
+                className="inline-flex items-center text-lg px-8 py-4"
+              >
+                <FaDownload className="mr-2" />
+                Download Resume (PDF)
+              </Button>
+            </div>
         </motion.div>
 
         <motion.div
@@ -249,9 +260,13 @@ export default function Resume() {
               I'm always open to discussing new opportunities, collaborations, or interesting projects.
               Feel free to reach out through my contact form or directly via email.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" variant="primary">
                 Contact Me
+              </Button>
+              <Button href={resumeUrl} target="_blank" variant="outline">
+                <FaDownload className="mr-2" />
+                View Full Resume
               </Button>
               <Button href={resumeUrl} download="Musawenkosi-Manzini-Resume.pdf" variant="outline">
                 <FaDownload className="mr-2" />
