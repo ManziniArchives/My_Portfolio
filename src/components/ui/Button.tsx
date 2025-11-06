@@ -32,6 +32,7 @@ export default function Button({
       <Link
         href={href}
         target={target}
+        download={download}
         className={classes}
       >
         {children}
