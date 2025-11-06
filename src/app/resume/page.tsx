@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
+import Footer from '@/components/Footer/Footer'
 import { personalInfo } from '@/data/personalInfo'
 import { certifications } from '@/data/certifications'
 import { skills } from '@/data/skills'
