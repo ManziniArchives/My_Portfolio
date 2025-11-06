@@ -3,7 +3,7 @@
 import { Certification } from '@/types/certification'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
-import { FaExternalLinkAlt, FaShieldAlt, FaCode, FaDatabase, FaCloud } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaShieldAlt, FaCode, FaDatabase, FaCloud, FaBriefcase, FaServer } from 'react-icons/fa'
 
 interface CertificationCardProps {
   certification: Certification
