@@ -8,7 +8,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/gitLunga/FMT.git',
     technologies: ['JavaScript', 'CSS', 'HTML'],
     language: 'JavaScript',
-    updatedAt: '2024-01-15',
+    updatedAt: '2025-01-15',
     featured: true
   },
   {
@@ -18,7 +18,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/ManziniArchives/pathfinder-edu-mpumalanga.git',
     technologies: ['Vite', 'TypeScript', 'React', 'Tailwind CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-11-06',
+    updatedAt: '2025-11-06',
     featured: true
   },
   {
@@ -28,7 +28,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/ManziniArchives/manzini-wanderlust.git',
     technologies: ['Vite', 'TypeScript', 'React', 'Tailwind CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-11-06',
+    updatedAt: '2025-11-06',
     featured: true
   }
 ];
@@ -41,7 +41,7 @@ export const defaultProjects: Project[] = [
     githubUrl: 'https://github.com/aytee-80/CampusConnect.git',
     technologies: ['TypeScript', 'JavaScript', 'CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-10-15',
+    updatedAt: '2025-10-15',
     featured: false
   },
   {
@@ -51,7 +51,7 @@ export const defaultProjects: Project[] = [
     githubUrl: 'https://github.com/aquamarinemichelle/Property_Finder.git',
     technologies: ['Java', 'PHP', 'JavaScript'],
     language: 'Java',
-    updatedAt: '2024-09-20',
+    updatedAt: '2025-09-20',
     featured: false
   }
 ];

@@ -153,7 +153,7 @@ export default function Contact() {
             {/* Response Time */}
             <motion.div
               variants={itemVariants}
-              className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-6 border border-primary-200 dark:border-primary-700"
+              className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 border border-primary-200 dark:border-primary-700"
             >
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 Response Time

@@ -4,10 +4,10 @@ import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import Footer from '@/components/Footer/Footer'
-import { useGitHubAPI } from '@/hooks/useGitHubAPI'
+import { featuredProjects, defaultProjects } from '@/data/projects'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
-import { FaGithub, FaSpinner, FaExclamationTriangle, FaSearch } from 'react-icons/fa'
+import { FaGithub, FaSearch } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,12 +31,12 @@ const itemVariants = {
 }
 
 export default function Projects() {
-  const { projects, loading, error } = useGitHubAPI()
+  const allProjects = [...featuredProjects, ...defaultProjects]
   const [filter, setFilter] = useState<'all' | 'featured'>('all')
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredProjects = useMemo(() => {
-    let filtered = projects
+    let filtered = allProjects
 
     if (filter === 'featured') {
       filtered = filtered.filter(project => project.featured)
@@ -51,15 +51,15 @@ export default function Projects() {
     }
 
     return filtered
-  }, [projects, filter, searchTerm])
+  }, [allProjects, filter, searchTerm])
 
   const allTechnologies = useMemo(() => {
     const techs = new Set<string>()
-    projects.forEach(project => {
+    allProjects.forEach(project => {
       project.technologies.forEach(tech => techs.add(tech))
     })
     return Array.from(techs).sort()
-  }, [projects])
+  }, [allProjects])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
@@ -110,7 +110,7 @@ export default function Projects() {
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
-                All Projects ({projects.length})
+                All Projects ({allProjects.length})
               </button>
               <button
                 onClick={() => setFilter('featured')}
@@ -120,7 +120,7 @@ export default function Projects() {
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
-                Featured ({projects.filter(p => p.featured).length})
+                Featured ({allProjects.filter(p => p.featured).length})
               </button>
             </div>
 
@@ -150,26 +150,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* Loading State */}
-        {loading && (
-          <div className="flex flex-col items-center justify-center py-16">
-            <FaSpinner className="w-8 h-8 text-primary-600 animate-spin mb-4" />
-            <p className="text-gray-600 dark:text-gray-400">Fetching projects from GitHub...</p>
-          </div>
-        )}
-
-        {/* Error State */}
-        {error && (
-          <div className="flex flex-col items-center justify-center py-16">
-            <FaExclamationTriangle className="w-8 h-8 text-yellow-600 mb-4" />
-            <p className="text-gray-600 dark:text-gray-400 text-center max-w-md">
-              {error}. Showing default projects instead.
-            </p>
-          </div>
-        )}
-
         {/* Projects Grid */}
-        {!loading && (
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -189,7 +170,7 @@ export default function Projects() {
         )}
 
         {/* No Results */}
-        {!loading && filteredProjects.length === 0 && (
+        {filteredProjects.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -211,7 +192,6 @@ export default function Projects() {
         )}
 
         {/* Stats */}
-        {!loading && !error && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -219,11 +199,9 @@ export default function Projects() {
             className="mt-16 text-center"
           >
             <div className="inline-flex items-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
-              <span>Total Projects: <strong className="text-primary-600 dark:text-primary-400">{projects.length}</strong></span>
+              <span>Total Projects: <strong className="text-primary-600 dark:text-primary-400">{allProjects.length}</strong></span>
               <span>•</span>
-              <span>Featured: <strong className="text-primary-600 dark:text-primary-400">{projects.filter(p => p.featured).length}</strong></span>
-              <span>•</span>
-              <span>Total Stars: <strong className="text-primary-600 dark:text-primary-400">{projects.reduce((sum, p) => sum + (p.stars || 0), 0)}</strong></span>
+              <span>Featured: <strong className="text-primary-600 dark:text-primary-400">{allProjects.filter(p => p.featured).length}</strong></span>
             </div>
           </motion.div>
         )}
