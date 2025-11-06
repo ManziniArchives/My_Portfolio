@@ -32,7 +32,7 @@ const itemVariants = {
 }
 
 export default function Resume() {
-  const resumeUrl = "/resume/Musawenkosi-Manzini-Resume.pdf"
+  const resumeUrl = "/resume/Musawenkosi Manzini Resume..pdf"
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
