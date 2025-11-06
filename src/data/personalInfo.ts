@@ -10,7 +10,7 @@ export const personalInfo = {
 
 My experience includes developing scalable web applications, implementing security best practices, analyzing data to derive meaningful insights, and managing complex database systems. I believe in writing clean, maintainable code and staying current with emerging technologies and industry trends.`,
   stats: {
-    yearsOfExperience: '4+',
+    yearsOfExperience: '2+',
     certifications: 31,
     projects: 15,
     technologies: 20

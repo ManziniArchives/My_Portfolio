@@ -141,11 +141,11 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm flex items-center">
+            {/* <p className="text-gray-400 text-sm flex items-center">
               Built with{' '}
               <FaHeart className="w-4 h-4 mx-1 text-red-500" />
               using Next.js & Tailwind CSS
-            </p>
+            </p> */}
           </div>
         </motion.div>
       </div>
