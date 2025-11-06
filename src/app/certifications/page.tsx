@@ -122,6 +122,8 @@ export default function Certifications() {
           </div>
         </motion.div>
       </Container>
+
+      <Footer />
     </div>
   )
 }
