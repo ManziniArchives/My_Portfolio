@@ -5,7 +5,7 @@ import { personalInfo } from '@/data/personalInfo'
 import { certifications } from '@/data/certifications'
 import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
-import { FaDownload, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaGraduationCap, FaBriefcase } from 'react-icons/fa'
+import { FaDownload, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaUser } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
