@@ -41,7 +41,7 @@ export function useGitHubAPI(username: string = 'ManziniArchives') {
             name: repo.name.replace(/-/g, ' ').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
             description: repo.description,
             githubUrl: repo.html_url,
-            technologies: repo.tags || repo.topics.slice(0, 5),
+            technologies: repo.topics.slice(0, 5),
             stars: repo.stargazers_count,
             forks: repo.forks_count,
             language: repo.language,
