@@ -1,7 +1,7 @@
-import { HTMLProps } from 'react'
-
-interface ContainerProps extends HTMLProps<HTMLDivElement> {
+interface ContainerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
+  className?: string
+  children: React.ReactNode
 }
 
 export default function Container({
