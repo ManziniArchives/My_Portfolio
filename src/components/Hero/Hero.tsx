@@ -30,7 +30,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16">
+    <section className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 pt-16">
       <div className="container">
         <motion.div
           className="text-center max-w-4xl mx-auto"
