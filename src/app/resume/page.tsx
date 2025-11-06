@@ -49,7 +49,7 @@ export default function Resume() {
             Resume & CV
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Download my complete resume or view the key information below. Feel free to reach out
+            View my complete resume in a new tab or explore the key information below. Feel free to reach out
             if you'd like to discuss my qualifications in more detail.
           </p>
 
