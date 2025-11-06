@@ -259,6 +259,8 @@ export default function Resume() {
           </motion.div>
         </motion.div>
       </Container>
+
+      <Footer />
     </div>
   )
 }
