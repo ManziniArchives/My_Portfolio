@@ -59,7 +59,7 @@ export default function Skills() {
   const stats = useMemo(() => {
     const totalSkills = skills.length
     const expertSkills = skills.filter(s => s.proficiency >= 4).length
-    const categories = [...new Set(skills.map(s => s.category))].length
+    const categories = Array.from(new Set(skills.map(s => s.category))).length
     const avgProficiency = (skills.reduce((sum, s) => sum + s.proficiency, 0) / totalSkills).toFixed(1)
 
     return { totalSkills, expertSkills, categories, avgProficiency }
