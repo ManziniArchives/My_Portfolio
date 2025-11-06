@@ -225,7 +225,7 @@ export default function Resume() {
                   A scouting system for identifying young football talents with advanced analytics and reporting capabilities.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Node.js', 'MongoDB', 'Express'].map((tech) => (
+                  {['JavaScript', 'CSS', 'HTML'].map((tech) => (
                     <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
                       {tech}
                     </span>
@@ -235,13 +235,29 @@ export default function Resume() {
 
               <div className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  Professional Portfolio Website
+                  Mpumalanga AI Pathfinder
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-2">
-                  Modern personal portfolio built with Next.js, TypeScript, and Tailwind CSS featuring responsive design and optimized performance.
+                  Educational platform with AI-powered navigation and learning tools for students in Mpumalanga region.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'].map((tech) => (
+                  {['Vite', 'TypeScript', 'React', 'Tailwind CSS'].map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                  Manzini Wanderlust
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-2">
+                  Travel and exploration platform featuring destination discovery and trip planning capabilities.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['Vite', 'TypeScript', 'React', 'Tailwind CSS'].map((tech) => (
                     <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
                       {tech}
                     </span>
