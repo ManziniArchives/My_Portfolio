@@ -7,7 +7,7 @@ import Footer from '@/components/Footer/Footer'
 import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
-import { FaCode, FaPalette, FaCog, FaDatabase, FaTools, FaTarget } from 'react-icons/fa'
+import { FaCode, FaPalette, FaCog, FaDatabase, FaTools, FaThLarge } from 'react-icons/fa'
 
 const categories = [
   { value: 'all', label: 'All Skills', icon: FaTarget },
