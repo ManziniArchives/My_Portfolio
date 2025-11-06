@@ -14,6 +14,8 @@ const categoryIcons = {
   development: FaCode,
   data: FaDatabase,
   cloud: FaCloud,
+  business: FaBriefcase,
+  database: FaServer,
 }
 
 const categoryColors = {
