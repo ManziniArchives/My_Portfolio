@@ -51,7 +51,7 @@ export const defaultProjects: Project[] = [
     githubUrl: 'https://github.com/aquamarinemichelle/Property_Finder.git',
     technologies: ['Java', 'PHP', 'JavaScript'],
     language: 'Java',
-    updatedAt: '2024-09-20',
+    updatedAt: '2025-09-20',
     featured: false
   }
 ];
