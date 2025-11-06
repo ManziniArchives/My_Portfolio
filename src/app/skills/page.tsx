@@ -138,7 +138,7 @@ export default function Skills() {
                       : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >
-                  <span className="mr-2">{category.icon}</span>
+                  <category.icon className="w-4 h-4 mr-2" />
                   {category.label}
                 </button>
               ))}
