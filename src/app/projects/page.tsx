@@ -6,7 +6,7 @@ import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import { useGitHubAPI } from '@/hooks/useGitHubAPI'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
-import { FaGithub, FaSpinner, FaExclamationTriangle } from 'react-icons/fa'
+import { FaGithub, FaSpinner, FaExclamationTriangle, FaSearch } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
