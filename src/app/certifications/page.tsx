@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import CertificationCard from '@/components/CertificationCard/CertificationCard'
+import Footer from '@/components/Footer/Footer'
 import { certifications } from '@/data/certifications'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
