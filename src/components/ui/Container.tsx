@@ -10,7 +10,6 @@ export default function Container({
   children,
   size = 'lg',
   className = '',
-  ...props
 }: ContainerProps) {
   const sizeClasses = {
     sm: 'max-w-3xl',
