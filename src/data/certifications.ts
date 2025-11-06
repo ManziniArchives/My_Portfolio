@@ -1,5 +1,30 @@
 import { Certification } from '@/types/certification';
 
+/**
+ * ============================================================================
+ * CERTIFICATIONS DATA
+ * ============================================================================
+ *
+ * To add a new certification:
+ * 1. Copy and paste the existing certification template below
+ * 2. Update the fields:
+ *    - id: unique identifier (lowercase, no spaces)
+ *    - title: exact name of the certification
+ *    - issuer: organization that issued the certification
+ *    - date: year of completion (use '2025' format)
+ *    - verificationLink: direct link to verify the certification
+ *    - category: one of: 'security', 'development', 'data', 'cloud', 'database', 'business'
+ *
+ * Certification Categories:
+ * - security: Cybersecurity and information security
+ * - development: Programming, software engineering, web development
+ * - data: Data science, analytics, visualization
+ * - cloud: Cloud computing, AWS, Oracle Cloud, etc.
+ * - database: SQL, database management
+ * - business: Business analysis, management, soft skills
+ * ============================================================================
+ */
+
 export const certifications: Certification[] = [
   // Security Certifications
   {
