@@ -199,11 +199,9 @@ export default function Projects() {
             className="mt-16 text-center"
           >
             <div className="inline-flex items-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
-              <span>Total Projects: <strong className="text-primary-600 dark:text-primary-400">{projects.length}</strong></span>
+              <span>Total Projects: <strong className="text-primary-600 dark:text-primary-400">{allProjects.length}</strong></span>
               <span>•</span>
-              <span>Featured: <strong className="text-primary-600 dark:text-primary-400">{projects.filter(p => p.featured).length}</strong></span>
-              <span>•</span>
-              <span>Total Stars: <strong className="text-primary-600 dark:text-primary-400">{projects.reduce((sum, p) => sum + (p.stars || 0), 0)}</strong></span>
+              <span>Featured: <strong className="text-primary-600 dark:text-primary-400">{allProjects.filter(p => p.featured).length}</strong></span>
             </div>
           </motion.div>
         )}
