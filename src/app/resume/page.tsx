@@ -53,15 +53,26 @@ export default function Resume() {
             if you'd like to discuss my qualifications in more detail.
           </p>
 
-          <Button
-            href={resumeUrl}
-            target="_blank"
-            variant="primary"
-            className="inline-flex items-center text-lg px-8 py-4"
-          >
-            <FaDownload className="mr-2" />
-            View Resume (PDF)
-          </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href={resumeUrl}
+                target="_blank"
+                variant="primary"
+                className="inline-flex items-center text-lg px-8 py-4"
+              >
+                <FaDownload className="mr-2" />
+                View Resume (PDF)
+              </Button>
+              <Button
+                href={resumeUrl}
+                download="Musawenkosi-Manzini-Resume.pdf"
+                variant="outline"
+                className="inline-flex items-center text-lg px-8 py-4"
+              >
+                <FaDownload className="mr-2" />
+                Download Resume (PDF)
+              </Button>
+            </div>
         </motion.div>
 
         <motion.div
