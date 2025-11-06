@@ -260,13 +260,17 @@ export default function Resume() {
               I'm always open to discussing new opportunities, collaborations, or interesting projects.
               Feel free to reach out through my contact form or directly via email.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" variant="primary">
                 Contact Me
               </Button>
               <Button href={resumeUrl} target="_blank" variant="outline">
                 <FaDownload className="mr-2" />
                 View Full Resume
+              </Button>
+              <Button href={resumeUrl} download="Musawenkosi-Manzini-Resume.pdf" variant="outline">
+                <FaDownload className="mr-2" />
+                Download Full Resume
               </Button>
             </div>
           </motion.div>
