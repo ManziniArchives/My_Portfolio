@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface ContainerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
