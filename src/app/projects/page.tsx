@@ -3,6 +3,7 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
+import Footer from '@/components/Footer/Footer'
 import { useGitHubAPI } from '@/hooks/useGitHubAPI'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
