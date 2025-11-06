@@ -28,7 +28,7 @@ export default function ProfileImage() {
             />
           </div>
         ) : (
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-500 to-secondary-600 flex items-center justify-center text-white text-4xl md:text-5xl lg:text-6xl font-bold border-4 border-primary-500 shadow-xl">
+          <div className="w-full h-full rounded-full bg-primary-600 flex items-center justify-center text-white text-4xl md:text-5xl lg:text-6xl font-bold border-4 border-primary-500 shadow-xl">
             {initials}
           </div>
         )}
