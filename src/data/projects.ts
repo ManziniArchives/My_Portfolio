@@ -18,7 +18,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/ManziniArchives/pathfinder-edu-mpumalanga.git',
     technologies: ['Vite', 'TypeScript', 'React', 'Tailwind CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-11-06',
+    updatedAt: '2025-11-06',
     featured: true
   },
   {
@@ -28,7 +28,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/ManziniArchives/manzini-wanderlust.git',
     technologies: ['Vite', 'TypeScript', 'React', 'Tailwind CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-11-06',
+    updatedAt: '2025-11-06',
     featured: true
   }
 ];
