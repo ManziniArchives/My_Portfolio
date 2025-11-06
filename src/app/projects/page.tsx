@@ -31,12 +31,12 @@ const itemVariants = {
 }
 
 export default function Projects() {
-  const { projects, loading, error } = useGitHubAPI()
+  const allProjects = [...featuredProjects, ...defaultProjects]
   const [filter, setFilter] = useState<'all' | 'featured'>('all')
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredProjects = useMemo(() => {
-    let filtered = projects
+    let filtered = allProjects
 
     if (filter === 'featured') {
       filtered = filtered.filter(project => project.featured)
@@ -51,15 +51,15 @@ export default function Projects() {
     }
 
     return filtered
-  }, [projects, filter, searchTerm])
+  }, [allProjects, filter, searchTerm])
 
   const allTechnologies = useMemo(() => {
     const techs = new Set<string>()
-    projects.forEach(project => {
+    allProjects.forEach(project => {
       project.technologies.forEach(tech => techs.add(tech))
     })
     return Array.from(techs).sort()
-  }, [projects])
+  }, [allProjects])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
