@@ -110,7 +110,7 @@ export default function Projects() {
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
-                All Projects ({projects.length})
+                All Projects ({allProjects.length})
               </button>
               <button
                 onClick={() => setFilter('featured')}
