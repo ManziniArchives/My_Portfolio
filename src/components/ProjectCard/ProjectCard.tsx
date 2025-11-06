@@ -1,3 +1,5 @@
+"use client"
+
 import { Project } from '@/types/project'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
