@@ -150,26 +150,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* Loading State */}
-        {loading && (
-          <div className="flex flex-col items-center justify-center py-16">
-            <FaSpinner className="w-8 h-8 text-primary-600 animate-spin mb-4" />
-            <p className="text-gray-600 dark:text-gray-400">Fetching projects from GitHub...</p>
-          </div>
-        )}
-
-        {/* Error State */}
-        {error && (
-          <div className="flex flex-col items-center justify-center py-16">
-            <FaExclamationTriangle className="w-8 h-8 text-yellow-600 mb-4" />
-            <p className="text-gray-600 dark:text-gray-400 text-center max-w-md">
-              {error}. Showing default projects instead.
-            </p>
-          </div>
-        )}
-
         {/* Projects Grid */}
-        {!loading && (
           <motion.div
             variants={containerVariants}
             initial="hidden"
