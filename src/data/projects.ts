@@ -8,7 +8,7 @@ export const featuredProjects: Project[] = [
     githubUrl: 'https://github.com/gitLunga/FMT.git',
     technologies: ['JavaScript', 'CSS', 'HTML'],
     language: 'JavaScript',
-    updatedAt: '2024-01-15',
+    updatedAt: '2025-01-15',
     featured: true
   },
   {
