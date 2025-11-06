@@ -1,5 +1,28 @@
 import { Project } from '@/types/project';
 
+/**
+ * ============================================================================
+ * PROJECTS DATA
+ * ============================================================================
+ *
+ * To add a new project:
+ * 1. Copy and paste the existing project template below
+ * 2. Update the fields:
+ *    - id: unique identifier (lowercase, no spaces)
+ *    - name: project display name
+ *    - description: brief description of what the project does
+ *    - githubUrl: complete GitHub repository URL
+ *    - technologies: array of technologies used (max 5 for display)
+ *    - language: primary programming language
+ *    - updatedAt: last update date (format: '2025-MM-DD')
+ *    - featured: set to true for main featured projects, false for others
+ *
+ * Featured Projects vs Default Projects:
+ * - featuredProjects: Main projects that appear prominently (3-5 recommended)
+ * - defaultProjects: Other projects that appear in the full list
+ * ============================================================================
+ */
+
 export const featuredProjects: Project[] = [
   {
     id: 'football-management-system',
