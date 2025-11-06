@@ -41,7 +41,7 @@ export const defaultProjects: Project[] = [
     githubUrl: 'https://github.com/aytee-80/CampusConnect.git',
     technologies: ['TypeScript', 'JavaScript', 'CSS'],
     language: 'TypeScript',
-    updatedAt: '2024-10-15',
+    updatedAt: '2025-10-15',
     featured: false
   },
   {
