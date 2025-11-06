@@ -228,6 +228,8 @@ export default function Projects() {
           </motion.div>
         )}
       </Container>
+
+      <Footer />
     </div>
   )
 }
