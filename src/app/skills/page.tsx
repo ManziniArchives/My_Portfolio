@@ -231,6 +231,8 @@ export default function Skills() {
           </div>
         </motion.div>
       </Container>
+
+      <Footer />
     </div>
   )
 }
