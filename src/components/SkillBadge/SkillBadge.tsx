@@ -1,3 +1,5 @@
+"use client"
+
 import { Skill } from '@/types/skill'
 import { motion } from 'framer-motion'
 

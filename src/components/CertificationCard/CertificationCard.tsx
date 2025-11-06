@@ -1,3 +1,5 @@
+"use client"
+
 import { Certification } from '@/types/certification'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
