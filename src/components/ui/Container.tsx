@@ -1,0 +1,28 @@
+import { HTMLProps } from 'react'
+
+interface ContainerProps extends HTMLProps<HTMLDivElement> {
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+}
+
+export default function Container({
+  children,
+  size = 'lg',
+  className = '',
+  ...props
+}: ContainerProps) {
+  const sizeClasses = {
+    sm: 'max-w-3xl',
+    md: 'max-w-5xl',
+    lg: 'max-w-7xl',
+    xl: 'max-w-full'
+  }
+
+  return (
+    <div
+      className={`mx-auto px-4 sm:px-6 lg:px-8 ${sizeClasses[size]} ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
