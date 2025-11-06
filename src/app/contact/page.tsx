@@ -195,6 +195,8 @@ export default function Contact() {
           </motion.div>
         </motion.div>
       </Container>
+
+      <Footer />
     </div>
   )
 }
