@@ -120,7 +120,7 @@ export default function Projects() {
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
-                Featured ({projects.filter(p => p.featured).length})
+                Featured ({allProjects.filter(p => p.featured).length})
               </button>
             </div>
 
