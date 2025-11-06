@@ -62,7 +62,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
     },
   })
 
-  const getFieldError = (fieldName: string) => {
+  const getFieldError = (fieldName: keyof typeof formik.values) => {
     return formik.touched[fieldName] && formik.errors[fieldName]
       ? formik.errors[fieldName]
       : ''
