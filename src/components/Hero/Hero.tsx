@@ -1,3 +1,5 @@
+"use client"
+
 import { personalInfo } from '@/data/personalInfo'
 import ProfileImage from './ProfileImage'
 import Button from '@/components/ui/Button'
