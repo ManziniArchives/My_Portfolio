@@ -1,12 +1,37 @@
 import { Certification } from '@/types/certification';
 
+/**
+ * ============================================================================
+ * CERTIFICATIONS DATA
+ * ============================================================================
+ *
+ * To add a new certification:
+ * 1. Copy and paste the existing certification template below
+ * 2. Update the fields:
+ *    - id: unique identifier (lowercase, no spaces)
+ *    - title: exact name of the certification
+ *    - issuer: organization that issued the certification
+ *    - date: year of completion (use '2025' format)
+ *    - verificationLink: direct link to verify the certification
+ *    - category: one of: 'security', 'development', 'data', 'cloud', 'database', 'business'
+ *
+ * Certification Categories:
+ * - security: Cybersecurity and information security
+ * - development: Programming, software engineering, web development
+ * - data: Data science, analytics, visualization
+ * - cloud: Cloud computing, AWS, Oracle Cloud, etc.
+ * - database: SQL, database management
+ * - business: Business analysis, management, soft skills
+ * ============================================================================
+ */
+
 export const certifications: Certification[] = [
   // Security Certifications
   {
     id: 'ai-security',
     title: 'AI Security',
     issuer: 'Securiti AI',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://education.securiti.ai/verification/13F365DC9-13F363910-1390461A9/',
     category: 'security'
   },
@@ -14,7 +39,7 @@ export const certifications: Certification[] = [
     id: 'dspm-fundamentals',
     title: 'DSPM Fundamentals',
     issuer: 'Securiti AI',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://education.securiti.ai/verification/1453BF954-1453BF635-1390461A9/',
     category: 'security'
   },
@@ -22,7 +47,7 @@ export const certifications: Certification[] = [
     id: 'privacyops',
     title: 'PrivacyOps',
     issuer: 'Securiti AI',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://education.securiti.ai/verification/139407CC3-13931B080-1390461A9/',
     category: 'security'
   },
@@ -30,7 +55,7 @@ export const certifications: Certification[] = [
     id: 'intro-cybersecurity',
     title: 'Introduction to Cybersecurity',
     issuer: 'Cisco',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/4e162c31-f6cd-4d97-94cf-f9bfc43ed055/linked_in_profile',
     category: 'security'
   },
@@ -38,7 +63,7 @@ export const certifications: Certification[] = [
     id: 'getting-started-cybersecurity',
     title: 'Getting Started with Cybersecurity',
     issuer: 'Cisco',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/9a1d3214-e0b2-43a6-8317-c81c560c3d6b/linked_in_profile',
     category: 'security'
   },
@@ -79,7 +104,7 @@ export const certifications: Certification[] = [
     id: 'aws-networking',
     title: 'AWS Educate Getting Started with Networking',
     issuer: 'AWS Educate',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/5631abe7-0f6e-41e1-84c8-f3eab89d26b3/linked_in_profile',
     category: 'cloud'
   },
@@ -87,7 +112,7 @@ export const certifications: Certification[] = [
     id: 'aws-cloud-101',
     title: 'AWS Educate Introduction to Cloud 101',
     issuer: 'AWS Educate',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/f62a3b16-1f80-4677-af03-0ee1e01e6090/linked_in_profile',
     category: 'cloud'
   },
@@ -95,7 +120,7 @@ export const certifications: Certification[] = [
     id: 'aws-generative-ai',
     title: 'AWS Educate Introduction to Generative AI',
     issuer: 'AWS Educate',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/030d3717-21ba-4497-9291-ec9cc3c5af2e/linked_in_profile',
     category: 'cloud'
   },
@@ -104,7 +129,7 @@ export const certifications: Certification[] = [
     id: 'software-engineer',
     title: 'Software Engineer',
     issuer: 'HackerRank',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.hackerrank.com/certificates/iframe/ea89a03a262f',
     category: 'development'
   },
@@ -112,7 +137,7 @@ export const certifications: Certification[] = [
     id: 'software-engineer-intern',
     title: 'Software Engineer Intern',
     issuer: 'HackerRank',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.hackerrank.com/certificates/iframe/4678e749b2a4',
     category: 'development'
   },
@@ -120,7 +145,7 @@ export const certifications: Certification[] = [
     id: 'react-basic',
     title: 'React (Basic)',
     issuer: 'HackerRank',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.hackerrank.com/certificates/iframe/5e94c8e2c406',
     category: 'development'
   },
@@ -128,7 +153,7 @@ export const certifications: Certification[] = [
     id: 'backend-apis',
     title: 'Back End Development and APIs',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/back-end-development-and-apis',
     category: 'development'
   },
@@ -136,7 +161,7 @@ export const certifications: Certification[] = [
     id: 'legacy-backend',
     title: 'Legacy Back End',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://freecodecamp.org/certification/manziniarchives/legacy-back-end',
     category: 'development'
   },
@@ -144,7 +169,7 @@ export const certifications: Certification[] = [
     id: 'legacy-frontend',
     title: 'Legacy Front End',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://freecodecamp.org/certification/manziniarchives/legacy-front-end',
     category: 'development'
   },
@@ -152,7 +177,7 @@ export const certifications: Certification[] = [
     id: 'legacy-javascript',
     title: 'Legacy JavaScript Algorithms and Data Structures',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://freecodecamp.org/certification/manziniarchives/javascript-algorithms-and-data-structures',
     category: 'development'
   },
@@ -160,7 +185,7 @@ export const certifications: Certification[] = [
     id: 'scientific-computing',
     title: 'Scientific Computing with Python',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/scientific-computing-with-python-v7',
     category: 'development'
   },
@@ -168,7 +193,7 @@ export const certifications: Certification[] = [
     id: 'frontend-libraries',
     title: 'Front End Development Libraries',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/front-end-development-libraries',
     category: 'development'
   },
@@ -176,7 +201,7 @@ export const certifications: Certification[] = [
     id: 'javascript-algorithms',
     title: 'JavaScript Algorithms and Data Structures',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/javascript-algorithms-and-data-structures-v8',
     category: 'development'
   },
@@ -184,7 +209,7 @@ export const certifications: Certification[] = [
     id: 'responsive-web-design',
     title: 'Responsive Web Design',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/responsive-web-design',
     category: 'development'
   },
@@ -193,7 +218,7 @@ export const certifications: Certification[] = [
     id: 'data-analytics-essentials',
     title: 'Data Analytics Essentials',
     issuer: 'Credly',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.credly.com/badges/ca8ed02f-249b-47da-b88f-357beda867c6/linked_in_profile',
     category: 'data'
   },
@@ -201,7 +226,7 @@ export const certifications: Certification[] = [
     id: 'data-visualization',
     title: 'Data Visualization',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.freecodecamp.org/certification/ManziniArchives/data-visualization',
     category: 'data'
   },
@@ -210,7 +235,7 @@ export const certifications: Certification[] = [
     id: 'relational-database',
     title: 'Relational Database',
     issuer: 'freeCodeCamp',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://freecodecamp.org/certification/manziniarchives/relational-database-v8',
     category: 'database'
   },
@@ -218,7 +243,7 @@ export const certifications: Certification[] = [
     id: 'sql-basic',
     title: 'SQL (Basic)',
     issuer: 'HackerRank',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.hackerrank.com/certificates/4d9c6082676b',
     category: 'database'
   },
@@ -226,7 +251,7 @@ export const certifications: Certification[] = [
     id: 'sql-intermediate',
     title: 'SQL (Intermediate)',
     issuer: 'HackerRank',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.hackerrank.com/certificates/iframe/439817e85b40',
     category: 'database'
   },
@@ -235,7 +260,7 @@ export const certifications: Certification[] = [
     id: 'business-websites',
     title: 'Effective Business Websites',
     issuer: 'Life Global',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.life-global.org/certificate/928507f4-6959-4239-85a5-4c31e10f84a0',
     category: 'business'
   },
@@ -243,7 +268,7 @@ export const certifications: Certification[] = [
     id: 'finding-funding',
     title: 'Finding Funding',
     issuer: 'Life Global',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.life-global.org/certificate/01923f05-7534-4596-8755-ee8b0ccb5220',
     category: 'business'
   },
@@ -251,7 +276,7 @@ export const certifications: Certification[] = [
     id: 'it-business-success',
     title: 'IT for Business Success',
     issuer: 'Life Global',
-    date: '2024',
+    date: '2025',
     verificationLink: 'https://www.life-global.org/certificate/f028bfb4-fb20-4d78-99fa-07becf1ae8ca',
     category: 'business'
   }
