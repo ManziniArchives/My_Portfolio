@@ -55,12 +55,12 @@ export default function Resume() {
 
           <Button
             href={resumeUrl}
-            download="Musawenkosi-Manzini-Resume.pdf"
+            target="_blank"
             variant="primary"
             className="inline-flex items-center text-lg px-8 py-4"
           >
             <FaDownload className="mr-2" />
-            Download Resume (PDF)
+            View Resume (PDF)
           </Button>
         </motion.div>
 
