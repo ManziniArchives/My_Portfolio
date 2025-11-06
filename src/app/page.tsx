@@ -86,7 +86,7 @@ export default function Home() {
                 href="/certifications"
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 text-center group"
               >
-                <div className="text-4xl mb-4">🎓</div>
+                <FaGraduationCap className="w-12 h-12 mx-auto mb-4 text-primary-600 dark:text-primary-400" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   Certifications
                 </h3>
@@ -99,7 +99,7 @@ export default function Home() {
                 href="/projects"
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 text-center group"
               >
-                <div className="text-4xl mb-4">💻</div>
+                <FaLaptopCode className="w-12 h-12 mx-auto mb-4 text-primary-600 dark:text-primary-400" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   Projects
                 </h3>
@@ -112,7 +112,7 @@ export default function Home() {
                 href="/skills"
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 text-center group"
               >
-                <div className="text-4xl mb-4">🛠️</div>
+                <FaTools className="w-12 h-12 mx-auto mb-4 text-primary-600 dark:text-primary-400" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   Skills
                 </h3>
@@ -125,7 +125,7 @@ export default function Home() {
                 href="/contact"
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 text-center group"
               >
-                <div className="text-4xl mb-4">📧</div>
+                <FaEnvelopeAlt className="w-12 h-12 mx-auto mb-4 text-primary-600 dark:text-primary-400" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   Contact
                 </h3>
