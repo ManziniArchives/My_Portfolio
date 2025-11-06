@@ -12,6 +12,7 @@ interface GitHubRepo {
   language: string;
   updated_at: string;
   topics: string[];
+  fork: boolean;
 }
 
 export function useGitHubAPI(username: string = 'ManziniArchives') {
