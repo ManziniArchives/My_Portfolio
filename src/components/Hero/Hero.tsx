@@ -50,7 +50,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-gradient mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white mb-6"
             variants={itemVariants}
           >
             {personalInfo.title}
