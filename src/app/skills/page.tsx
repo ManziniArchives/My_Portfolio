@@ -7,14 +7,15 @@ import Footer from '@/components/Footer/Footer'
 import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
+import { FaCode, FaPalette, FaCog, FaDatabase, FaTools, FaTarget } from 'react-icons/fa'
 
 const categories = [
-  { value: 'all', label: 'All Skills', icon: '🎯' },
-  { value: 'language', label: 'Programming Languages', icon: '💻' },
-  { value: 'frontend', label: 'Frontend', icon: '🎨' },
-  { value: 'backend', label: 'Backend', icon: '⚙️' },
-  { value: 'database', label: 'Databases', icon: '🗄️' },
-  { value: 'tools', label: 'Tools & Others', icon: '🛠️' },
+  { value: 'all', label: 'All Skills', icon: FaTarget },
+  { value: 'language', label: 'Programming Languages', icon: FaCode },
+  { value: 'frontend', label: 'Frontend', icon: FaPalette },
+  { value: 'backend', label: 'Backend', icon: FaCog },
+  { value: 'database', label: 'Databases', icon: FaDatabase },
+  { value: 'tools', label: 'Tools & Others', icon: FaTools },
 ]
 
 const containerVariants = {
