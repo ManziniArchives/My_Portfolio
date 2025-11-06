@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import ContactForm from '@/components/ContactForm/ContactForm'
+import Footer from '@/components/Footer/Footer'
 import { personalInfo } from '@/data/personalInfo'
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa'
