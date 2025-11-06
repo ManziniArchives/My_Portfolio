@@ -3,7 +3,7 @@
 import { Certification } from '@/types/certification'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
-import { FaExternalLinkAlt, FaShieldAlt, FaCode, FaDatabase, FaCloud } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaShieldAlt, FaCode, FaDatabase, FaCloud, FaBriefcase, FaServer } from 'react-icons/fa'
 
 interface CertificationCardProps {
   certification: Certification
@@ -14,6 +14,8 @@ const categoryIcons = {
   development: FaCode,
   data: FaDatabase,
   cloud: FaCloud,
+  business: FaBriefcase,
+  database: FaServer,
 }
 
 const categoryColors = {
@@ -21,10 +23,12 @@ const categoryColors = {
   development: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
   data: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
   cloud: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
+  business: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+  database: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
 }
 
 export default function CertificationCard({ certification }: CertificationCardProps) {
-  const Icon = categoryIcons[certification.category]
+  const Icon = categoryIcons[certification.category] || FaCode
 
   return (
     <motion.div
@@ -34,7 +38,7 @@ export default function CertificationCard({ certification }: CertificationCardPr
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className={`p-3 rounded-lg ${categoryColors[certification.category]}`}>
+          <div className={`p-3 rounded-lg ${categoryColors[certification.category] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'}`}>
             <Icon className="w-6 h-6" />
           </div>
           <div>
