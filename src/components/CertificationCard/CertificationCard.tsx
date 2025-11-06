@@ -23,6 +23,8 @@ const categoryColors = {
   development: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
   data: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
   cloud: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
+  business: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+  database: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
 }
 
 export default function CertificationCard({ certification }: CertificationCardProps) {
