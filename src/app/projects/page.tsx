@@ -4,10 +4,10 @@ import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import Footer from '@/components/Footer/Footer'
-import { useGitHubAPI } from '@/hooks/useGitHubAPI'
+import { featuredProjects, defaultProjects } from '@/data/projects'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
-import { FaGithub, FaSpinner, FaExclamationTriangle, FaSearch } from 'react-icons/fa'
+import { FaGithub, FaSearch } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
