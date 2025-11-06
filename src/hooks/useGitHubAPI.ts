@@ -20,54 +20,54 @@ export function useGitHubAPI(username: string = 'ManziniArchives') {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      setLoading(true)
-      setError(null)
+  const fetchProjects = async () => {
+    setLoading(true)
+    setError(null)
 
-      try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=20`)
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=20`)
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch GitHub repositories')
-        }
-
-        const repos: GitHubRepo[] = await response.json()
-
-        const transformedProjects: Project[] = repos
-          .filter(repo => !repo.fork && repo.description)
-          .map(repo => ({
-            id: repo.id.toString(),
-            name: repo.name.replace(/-/g, ' ').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-            description: repo.description,
-            githubUrl: repo.html_url,
-            technologies: repo.topics.slice(0, 5),
-            stars: repo.stargazers_count,
-            forks: repo.forks_count,
-            language: repo.language,
-            updatedAt: new Date(repo.updated_at).toLocaleDateString(),
-            featured: repo.stargazers_count > 5
-          }))
-
-        // Combine with default projects and remove duplicates
-        const combinedProjects = [
-          ...defaultProjects.filter(p => !transformedProjects.find(tp => tp.githubUrl === p.githubUrl)),
-          ...transformedProjects
-        ].slice(0, 12) // Limit to 12 projects
-
-        setProjects(combinedProjects)
-      } catch (err) {
-        console.error('Error fetching GitHub projects:', err)
-        setError(err instanceof Error ? err.message : 'Unknown error occurred')
-        // Keep default projects on error
-        setProjects(defaultProjects)
-      } finally {
-        setLoading(false)
+      if (!response.ok) {
+        throw new Error('Failed to fetch GitHub repositories')
       }
-    }
 
+      const repos: GitHubRepo[] = await response.json()
+
+      const transformedProjects: Project[] = repos
+        .filter(repo => !repo.fork && repo.description)
+        .map(repo => ({
+          id: repo.id.toString(),
+          name: repo.name.replace(/-/g, ' ').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+          description: repo.description,
+          githubUrl: repo.html_url,
+          technologies: repo.topics.slice(0, 5),
+          stars: repo.stargazers_count,
+          forks: repo.forks_count,
+          language: repo.language,
+          updatedAt: new Date(repo.updated_at).toLocaleDateString(),
+          featured: repo.stargazers_count > 5
+        }))
+
+      // Combine with default projects and remove duplicates
+      const combinedProjects = [
+        ...defaultProjects.filter(p => !transformedProjects.find(tp => tp.githubUrl === p.githubUrl)),
+        ...transformedProjects
+      ].slice(0, 12) // Limit to 12 projects
+
+      setProjects(combinedProjects)
+    } catch (err) {
+      console.error('Error fetching GitHub projects:', err)
+      setError(err instanceof Error ? err.message : 'Unknown error occurred')
+      // Keep default projects on error
+      setProjects(defaultProjects)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
     fetchProjects()
   }, [username])
 
-  return { projects, loading, error, refetch: () => fetchProjects() }
+  return { projects, loading, error, refetch: fetchProjects }
 }
