@@ -6,25 +6,25 @@ export const skills: Skill[] = [
     name: 'Java',
     category: 'language',
     proficiency: 4,
-    experience: '3+ years'
+    experience: '2+ years'
   },
   {
     name: 'Python',
     category: 'language',
     proficiency: 5,
-    experience: '4+ years'
+    experience: '2+ years'
   },
   {
     name: 'JavaScript',
     category: 'language',
     proficiency: 5,
-    experience: '4+ years'
+    experience: '2+ years'
   },
   {
     name: 'SQL',
     category: 'language',
     proficiency: 4,
-    experience: '3+ years'
+    experience: '2+ years'
   },
 
   // Frontend
@@ -32,25 +32,25 @@ export const skills: Skill[] = [
     name: 'React',
     category: 'frontend',
     proficiency: 5,
-    experience: '3+ years'
+    experience: '2+ years'
   },
   {
     name: 'React Native',
     category: 'frontend',
     proficiency: 3,
-    experience: '1+ years'
+    experience: '2+ years'
   },
   {
     name: 'HTML',
     category: 'frontend',
     proficiency: 5,
-    experience: '5+ years'
+    experience: '2+ years'
   },
   {
     name: 'CSS',
     category: 'frontend',
     proficiency: 5,
-    experience: '5+ years'
+    experience: '2+ years'
   },
   {
     name: 'TypeScript',
@@ -64,13 +64,13 @@ export const skills: Skill[] = [
     name: 'Node.js',
     category: 'backend',
     proficiency: 4,
-    experience: '3+ years'
+    experience: '2+ years'
   },
   {
     name: 'Express.js',
     category: 'backend',
     proficiency: 4,
-    experience: '3+ years'
+    experience: '2+ years'
   },
 
   // Databases
@@ -78,7 +78,7 @@ export const skills: Skill[] = [
     name: 'MySQL',
     category: 'database',
     proficiency: 4,
-    experience: '3+ years'
+    experience: '2+ years'
   },
   {
     name: 'MongoDB',
@@ -98,7 +98,7 @@ export const skills: Skill[] = [
     name: 'Git',
     category: 'tools',
     proficiency: 5,
-    experience: '4+ years'
+    experience: '2+ years'
   },
   {
     name: 'Docker',
@@ -116,6 +116,6 @@ export const skills: Skill[] = [
     name: 'Oracle Cloud',
     category: 'tools',
     proficiency: 4,
-    experience: '1+ years'
+    experience: '2+ years'
   }
 ];
