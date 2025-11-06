@@ -38,7 +38,7 @@ export default function CertificationCard({ certification }: CertificationCardPr
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className={`p-3 rounded-lg ${categoryColors[certification.category]}`}>
+          <div className={`p-3 rounded-lg ${categoryColors[certification.category] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'}`}>
             <Icon className="w-6 h-6" />
           </div>
           <div>
