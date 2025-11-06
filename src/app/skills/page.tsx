@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
 import SkillBadge from '@/components/SkillBadge/SkillBadge'
+import Footer from '@/components/Footer/Footer'
 import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
