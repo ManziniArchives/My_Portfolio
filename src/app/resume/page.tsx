@@ -251,7 +251,7 @@ export default function Resume() {
               <Button href="/contact" variant="primary">
                 Contact Me
               </Button>
-              <Button href={resumeUrl} download variant="outline">
+              <Button href={resumeUrl} download="Musawenkosi-Manzini-Resume.pdf" variant="outline">
                 <FaDownload className="mr-2" />
                 Download Full Resume
               </Button>
