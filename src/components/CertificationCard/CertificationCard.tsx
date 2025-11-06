@@ -28,7 +28,7 @@ const categoryColors = {
 }
 
 export default function CertificationCard({ certification }: CertificationCardProps) {
-  const Icon = categoryIcons[certification.category]
+  const Icon = categoryIcons[certification.category] || FaCode
 
   return (
     <motion.div
