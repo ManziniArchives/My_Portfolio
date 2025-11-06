@@ -4,7 +4,7 @@ import Footer from '@/components/Footer/Footer'
 import { personalInfo } from '@/data/personalInfo'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaLaptopCode, FaTools, FaEnvelope as FaEnvelopeAlt } from 'react-icons/fa'
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
