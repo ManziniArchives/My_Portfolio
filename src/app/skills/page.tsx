@@ -10,7 +10,7 @@ import { useState, useMemo } from 'react'
 import { FaCode, FaPalette, FaCog, FaDatabase, FaTools, FaThLarge } from 'react-icons/fa'
 
 const categories = [
-  { value: 'all', label: 'All Skills', icon: FaTarget },
+  { value: 'all', label: 'All Skills', icon: FaThLarge },
   { value: 'language', label: 'Programming Languages', icon: FaCode },
   { value: 'frontend', label: 'Frontend', icon: FaPalette },
   { value: 'backend', label: 'Backend', icon: FaCog },
