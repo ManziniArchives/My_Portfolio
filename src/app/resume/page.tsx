@@ -268,7 +268,7 @@ export default function Resume() {
           </motion.div>
 
           {/* Call to Action */}
-          <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-8 border border-primary-200 dark:border-primary-700 text-center">
+          <motion.div variants={itemVariants} className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-8 border border-primary-200 dark:border-primary-700 text-center">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
               Interested in Working Together?
             </h3>
