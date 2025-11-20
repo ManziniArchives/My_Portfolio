@@ -7,41 +7,42 @@ import Footer from '@/components/Footer/Footer'
 import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
 import { useState, useMemo } from 'react'
-import { FaCode, FaPalette, FaCog, FaDatabase, FaTools, FaThLarge } from 'react-icons/fa'
+import { FaCode, FaDatabase, FaServer, FaTools, FaCloud, FaShieldAlt } from 'react-icons/fa'
 
 const categories = [
-  { value: 'all', label: 'All Skills', icon: FaThLarge },
-  { value: 'language', label: 'Programming Languages', icon: FaCode },
-  { value: 'frontend', label: 'Frontend', icon: FaPalette },
-  { value: 'backend', label: 'Backend', icon: FaCog },
-  { value: 'database', label: 'Databases', icon: FaDatabase },
-  { value: 'tools', label: 'Tools & Others', icon: FaTools },
-]
+  { id: 'all', label: 'All Skills', icon: FaCode },
+  { id: 'frontend', label: 'Frontend', icon: FaCode },
+  { id: 'backend', label: 'Backend', icon: FaServer },
+  { id: 'database', label: 'Database', icon: FaDatabase },
+  { id: 'devops', label: 'DevOps & Cloud', icon: FaCloud },
+  { id: 'security', label: 'Security', icon: FaShieldAlt },
+  { id: 'tools', label: 'Tools', icon: FaTools },
+] as const
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: {
     opacity: 1,
-    y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 }
 
 export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [sortBy, setSortBy] = useState<'name' | 'proficiency'>('proficiency')
+  const [selectedCategory, setSelectedCategory] = useState<typeof categories[number]['id']>('all')
+  const [sortBy, setSortBy] = useState<'proficiency' | 'experience' | 'name'>('proficiency')
 
   const filteredSkills = useMemo(() => {
     let filtered = selectedCategory === 'all'
@@ -49,25 +50,14 @@ export default function Skills() {
       : skills.filter(skill => skill.category === selectedCategory)
 
     return filtered.sort((a, b) => {
-      if (sortBy === 'proficiency') {
-        return b.proficiency - a.proficiency
-      } else {
-        return a.name.localeCompare(b.name)
-      }
+      if (sortBy === 'proficiency') return b.proficiency - a.proficiency
+      if (sortBy === 'experience') return parseInt(b.yearsOfExperience) - parseInt(a.yearsOfExperience)
+      return a.name.localeCompare(b.name)
     })
   }, [selectedCategory, sortBy])
 
-  const stats = useMemo(() => {
-    const totalSkills = skills.length
-    const expertSkills = skills.filter(s => s.proficiency >= 4).length
-    const categories = Array.from(new Set(skills.map(s => s.category))).length
-    const avgProficiency = (skills.reduce((sum, s) => sum + s.proficiency, 0) / totalSkills).toFixed(1)
-
-    return { totalSkills, expertSkills, categories, avgProficiency }
-  }, [])
-
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-premium-black text-gray-900 dark:text-white pt-24 pb-16">
       <Navigation />
 
       <Container>
@@ -75,14 +65,14 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Technical Skills
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise across various domains including
-            programming languages, frameworks, databases, and development tools.
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            A comprehensive overview of my technical expertise, tools, and technologies
+            I've worked with throughout my career.
           </p>
         </motion.div>
 
@@ -91,148 +81,102 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-              {stats.totalSkills}
-            </div>
-            <div className="text-gray-600 dark:text-gray-400">Total Skills</div>
+          <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 text-center">
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-500 mb-2">{skills.length}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Total Skills</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-              {stats.expertSkills}
+          <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 text-center">
+            <div className="text-3xl font-bold text-secondary-600 dark:text-secondary-500 mb-2">
+              {skills.filter(s => s.proficiency >= 90).length}
             </div>
-            <div className="text-gray-600 dark:text-gray-400">Expert Level</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Expert Level</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-              {stats.categories}
+          <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 text-center">
+            <div className="text-3xl font-bold text-green-600 dark:text-green-500 mb-2">
+              {new Set(skills.map(s => s.category)).size}
             </div>
-            <div className="text-gray-600 dark:text-gray-400">Categories</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Categories</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-            <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-              {stats.avgProficiency}
-            </div>
-            <div className="text-gray-600 dark:text-gray-400">Avg. Proficiency</div>
+          <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 text-center">
+            <div className="text-3xl font-bold text-purple-600 dark:text-purple-500 mb-2">5+</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">Years Exp.</div>
           </div>
         </motion.div>
 
-        {/* Filters and Sort */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-8"
-        >
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.value}
-                  onClick={() => setSelectedCategory(category.value)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    selectedCategory === category.value
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+        {/* Controls */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-12">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${selectedCategory === category.id
+                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
+                  : 'bg-white dark:bg-premium-gray text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-white/5'
                   }`}
-                >
-                  <category.icon className="w-4 h-4 mr-2" />
-                  {category.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Sort by:
-              </label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as 'name' | 'proficiency')}
-                className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white"
               >
-                <option value="proficiency">Proficiency</option>
-                <option value="name">Name</option>
-              </select>
-            </div>
+                <category.icon className="w-4 h-4 mr-2" />
+                {category.label}
+              </button>
+            ))}
           </div>
-        </motion.div>
+
+          <div className="flex items-center gap-3 bg-white dark:bg-premium-gray p-1 rounded-xl border border-gray-200 dark:border-white/5">
+            <span className="text-sm text-gray-500 dark:text-gray-400 px-3">Sort by:</span>
+            {(['proficiency', 'experience', 'name'] as const).map((sort) => (
+              <button
+                key={sort}
+                onClick={() => setSortBy(sort)}
+                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${sortBy === sort
+                  ? 'bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+              >
+                {sort.charAt(0).toUpperCase() + sort.slice(1)}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Skills Grid */}
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial="visible"
           animate="visible"
-          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          {filteredSkills.map((skill, index) => (
+          {filteredSkills.map((skill) => (
             <motion.div
               key={skill.name}
               variants={itemVariants}
-              custom={index}
+              layout
             >
               <SkillBadge skill={skill} />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* No Skills Found */}
-        {filteredSkills.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-16"
-          >
-            <p className="text-gray-600 dark:text-gray-400">
-              No skills found for the selected category.
-            </p>
-          </motion.div>
-        )}
-
         {/* Proficiency Legend */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
-        >
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-            Proficiency Scale
-          </h3>
-          <div className="grid md:grid-cols-5 gap-4">
-            {[1, 2, 3, 4, 5].map((level) => {
-              const labels = {
-                1: 'Beginner',
-                2: 'Novice',
-                3: 'Intermediate',
-                4: 'Advanced',
-                5: 'Expert',
-              }
-              return (
-                <div key={level} className="text-center">
-                  <div className="flex justify-center mb-2">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <div
-                        key={star}
-                        className={`w-3 h-3 mx-0.5 rounded ${
-                          star <= level ? 'bg-primary-600' : 'bg-gray-300 dark:bg-gray-600'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {labels[level as keyof typeof labels]}
-                  </div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400">
-                    Level {level}
-                  </div>
-                </div>
-              )
-            })}
+        <div className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-white/5 pt-8">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <span>Expert (90-100%)</span>
           </div>
-        </motion.div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+            <span>Advanced (75-89%)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <span>Intermediate (50-74%)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+            <span>Beginner (0-49%)</span>
+          </div>
+        </div>
       </Container>
 
       <Footer />

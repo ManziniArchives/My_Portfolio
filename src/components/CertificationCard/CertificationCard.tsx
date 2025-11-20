@@ -19,12 +19,12 @@ const categoryIcons = {
 }
 
 const categoryColors = {
-  security: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-  development: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  data: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-  cloud: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
-  business: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-  database: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
+  security: 'text-green-400 bg-green-400/10',
+  development: 'text-blue-400 bg-blue-400/10',
+  data: 'text-purple-400 bg-purple-400/10',
+  cloud: 'text-orange-400 bg-orange-400/10',
+  business: 'text-red-400 bg-red-400/10',
+  database: 'text-indigo-400 bg-indigo-400/10',
 }
 
 export default function CertificationCard({ certification }: CertificationCardProps) {
@@ -32,20 +32,20 @@ export default function CertificationCard({ certification }: CertificationCardPr
 
   return (
     <motion.div
-      whileHover={{ y: -5, scale: 1.02 }}
+      whileHover={{ y: -5, scale: 1.01 }}
       transition={{ duration: 0.2 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl p-6 h-full flex flex-col"
+      className="bg-premium-gray border border-white/5 rounded-xl p-6 h-full flex flex-col hover:border-white/20 transition-colors duration-300"
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center space-x-3">
-          <div className={`p-3 rounded-lg ${categoryColors[certification.category] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'}`}>
+      <div className="flex items-start justify-between mb-6">
+        <div className="flex items-center space-x-4">
+          <div className={`p-3 rounded-lg ${categoryColors[certification.category] || 'text-gray-400 bg-gray-400/10'}`}>
             <Icon className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
+            <h3 className="text-lg font-semibold text-white line-clamp-2 leading-tight">
               {certification.title}
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-400 mt-1">
               {certification.issuer}
             </p>
           </div>
@@ -53,8 +53,8 @@ export default function CertificationCard({ certification }: CertificationCardPr
       </div>
 
       <div className="flex-grow">
-        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-          <span className="capitalize">{certification.category}</span>
+        <div className="flex items-center justify-between text-sm text-gray-500 mb-6 border-t border-white/5 pt-4">
+          <span className="capitalize font-medium tracking-wide">{certification.category}</span>
           <span>{certification.date}</span>
         </div>
       </div>
@@ -63,11 +63,11 @@ export default function CertificationCard({ certification }: CertificationCardPr
         href={certification.verificationLink}
         target="_blank"
         variant="outline"
-        className="w-full group"
+        className="w-full group border-white/10 text-gray-300 hover:bg-white/5 hover:text-white hover:border-white/30"
       >
         <span className="flex items-center justify-center">
           View Certificate
-          <FaExternalLinkAlt className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+          <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
         </span>
       </Button>
     </motion.div>

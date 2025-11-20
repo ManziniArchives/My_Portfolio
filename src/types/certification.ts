@@ -4,5 +4,5 @@ export interface Certification {
   issuer: string;
   date: string;
   verificationLink: string;
-  category: 'security' | 'development' | 'data' | 'cloud';
+  category: 'security' | 'development' | 'data' | 'cloud' | 'database' | 'business';
 }

@@ -39,7 +39,7 @@ export default function Certifications() {
     : certifications.filter(cert => cert.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-premium-black text-gray-900 dark:text-white pt-24 pb-16">
       <Navigation />
 
       <Container>
@@ -47,12 +47,12 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Professional Certifications
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             A collection of my professional certifications spanning cybersecurity, cloud computing,
             software development, and data science.
           </p>
@@ -63,17 +63,16 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-              }`}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${selectedCategory === category
+                ? 'bg-primary-600 border-primary-600 text-white shadow-lg shadow-primary-900/20'
+                : 'bg-white dark:bg-transparent border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:border-primary-500 dark:hover:border-white/30 hover:text-primary-600 dark:hover:text-white'
+                }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
@@ -83,9 +82,9 @@ export default function Certifications() {
         {/* Certifications Grid */}
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial="visible"
           animate="visible"
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {filteredCertifications.map((certification, index) => (
             <motion.div
@@ -102,9 +101,9 @@ export default function Certifications() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-12"
+            className="text-center py-20 bg-white dark:bg-premium-gray rounded-2xl border border-gray-200 dark:border-white/5"
           >
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
               No certifications found for the selected category.
             </p>
           </motion.div>
@@ -115,12 +114,12 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="mt-24 text-center border-t border-gray-200 dark:border-white/5 pt-12"
         >
-          <div className="inline-flex items-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
-            <span>Total Certifications: <strong className="text-primary-600 dark:text-primary-400">{certifications.length}</strong></span>
-            <span>•</span>
-            <span>Categories: <strong className="text-primary-600 dark:text-primary-400">{categories.length - 1}</strong></span>
+          <div className="inline-flex items-center space-x-8 text-sm text-gray-500 uppercase tracking-widest">
+            <span>Total Certifications: <strong className="text-gray-900 dark:text-white ml-2">{certifications.length}</strong></span>
+            <span className="text-gray-300 dark:text-white/20">•</span>
+            <span>Categories: <strong className="text-gray-900 dark:text-white ml-2">{categories.length - 1}</strong></span>
           </div>
         </motion.div>
       </Container>

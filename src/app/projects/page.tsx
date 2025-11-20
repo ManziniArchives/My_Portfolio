@@ -62,7 +62,7 @@ export default function Projects() {
   }, [allProjects])
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-premium-black text-gray-900 dark:text-white pt-24 pb-16">
       <Navigation />
 
       <Container>
@@ -70,22 +70,22 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             My Projects
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
             A collection of my software development projects, including full-stack applications,
             data analysis tools, and cybersecurity utilities.
           </p>
 
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center">
             <a
               href="https://github.com/ManziniArchives"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200"
+              className="inline-flex items-center px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"
             >
               <FaGithub className="w-5 h-5 mr-2" />
               View GitHub Profile
@@ -98,51 +98,49 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-8"
+          className="mb-12"
         >
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex gap-2">
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-between bg-white dark:bg-premium-gray border border-gray-200 dark:border-white/5 p-4 rounded-2xl shadow-sm dark:shadow-none">
+            <div className="flex gap-2 bg-gray-100 dark:bg-black/20 p-1 rounded-xl">
               <button
                 onClick={() => setFilter('all')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                  filter === 'all'
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                }`}
+                className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${filter === 'all'
+                  ? 'bg-white dark:bg-white/10 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/5'
+                  }`}
               >
-                All Projects ({allProjects.length})
+                All Projects
               </button>
               <button
                 onClick={() => setFilter('featured')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                  filter === 'featured'
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                }`}
+                className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${filter === 'featured'
+                  ? 'bg-white dark:bg-white/10 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/5'
+                  }`}
               >
-                Featured ({allProjects.filter(p => p.featured).length})
+                Featured
               </button>
             </div>
 
-            <div className="relative">
+            <div className="relative w-full md:w-auto">
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full md:w-80 px-4 py-2 pl-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white"
+                className="w-full md:w-80 px-4 py-2.5 pl-11 bg-gray-100 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 text-gray-900 dark:text-white placeholder-gray-500 transition-all"
               />
-              <FaSearch className="absolute left-3 top-3 text-gray-400" />
+              <FaSearch className="absolute left-4 top-3.5 text-gray-500" />
             </div>
           </div>
 
           {/* Technology Tags */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap gap-2 mt-6 justify-center md:justify-start">
             {allTechnologies.slice(0, 10).map((tech) => (
               <button
                 key={tech}
                 onClick={() => setSearchTerm(tech)}
-                className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+                className="px-3 py-1 text-xs font-medium bg-white dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 rounded-full hover:bg-primary-50 dark:hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-200 dark:hover:border-primary-500/20 transition-all duration-200"
               >
                 {tech}
               </button>
@@ -151,32 +149,31 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                custom={index}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+        <motion.div
+          variants={containerVariants}
+          initial="visible"
+          animate="visible"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              custom={index}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* No Results */}
         {filteredProjects.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-16"
+            className="text-center py-20 bg-white dark:bg-premium-gray rounded-2xl border border-gray-200 dark:border-white/5"
           >
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-500 dark:text-gray-400 text-lg mb-6">
               No projects found matching your criteria.
             </p>
             <button
@@ -184,7 +181,7 @@ export default function Projects() {
                 setFilter('all')
                 setSearchTerm('')
               }}
-              className="mt-4 px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
+              className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
             >
               Clear Filters
             </button>
@@ -192,19 +189,18 @@ export default function Projects() {
         )}
 
         {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 text-center"
-          >
-            <div className="inline-flex items-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
-              <span>Total Projects: <strong className="text-primary-600 dark:text-primary-400">{allProjects.length}</strong></span>
-              <span>•</span>
-              <span>Featured: <strong className="text-primary-600 dark:text-primary-400">{allProjects.filter(p => p.featured).length}</strong></span>
-            </div>
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-24 text-center border-t border-gray-200 dark:border-white/5 pt-12"
+        >
+          <div className="inline-flex items-center space-x-8 text-sm text-gray-500 uppercase tracking-widest">
+            <span>Total Projects: <strong className="text-gray-900 dark:text-white ml-2">{allProjects.length}</strong></span>
+            <span className="text-gray-300 dark:text-white/20">•</span>
+            <span>Featured: <strong className="text-gray-900 dark:text-white ml-2">{allProjects.filter(p => p.featured).length}</strong></span>
+          </div>
+        </motion.div>
       </Container>
 
       <Footer />

@@ -2,295 +2,220 @@
 
 import Navigation from '@/components/Navigation/Navigation'
 import Container from '@/components/ui/Container'
-import Button from '@/components/ui/Button'
 import Footer from '@/components/Footer/Footer'
-import { personalInfo } from '@/data/personalInfo'
-import { certifications } from '@/data/certifications'
-import { skills } from '@/data/skills'
 import { motion } from 'framer-motion'
-import { FaDownload, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaUser } from 'react-icons/fa'
+import { FaDownload, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaCode, FaProjectDiagram } from 'react-icons/fa'
+import { personalInfo } from '@/data/personalInfo'
+import Button from '@/components/ui/Button'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
 }
 
 export default function Resume() {
-  const resumeUrl = "/resume/Musawenkosi Manzini Resume..pdf"
-
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-premium-black text-gray-900 dark:text-white pt-24 pb-16">
       <Navigation />
 
       <Container>
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial="visible"
+          animate="visible"
+          variants={fadeIn}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Resume & CV
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Choose to view my resume online in a new tab or download it directly. You can also explore key information below. Feel free to reach out
-            if you'd like to discuss my qualifications in more detail.
-          </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href={resumeUrl}
-                target="_blank"
-                variant="primary"
-                className="inline-flex items-center text-lg px-8 py-4"
-              >
-                <FaDownload className="mr-2" />
-                View Resume (PDF)
-              </Button>
-              <Button
-                href={resumeUrl}
-                download="Musawenkosi-Manzini-Resume.pdf"
-                variant="outline"
-                className="inline-flex items-center text-lg px-8 py-4"
-              >
-                <FaDownload className="mr-2" />
-                Download Resume (PDF)
-              </Button>
-            </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
+              {personalInfo.name}
+            </h1>
+            <p className="text-xl text-primary-600 dark:text-primary-500 font-medium">
+              {personalInfo.title}
+            </p>
+          </div>
+          <Button
+            href="/resume.pdf"
+            variant="primary"
+            className="flex items-center gap-2 shadow-lg shadow-primary-600/20"
+          >
+            <FaDownload />
+            Download Resume
+          </Button>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl mx-auto space-y-12"
-        >
-          {/* Personal Information */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <FaUser className="mr-3 text-primary-600 dark:text-primary-400" />
-              Personal Information
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  {personalInfo.name}
-                </h3>
-                <p className="text-lg text-primary-600 dark:text-primary-400 mb-4">
-                  {personalInfo.title}
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {personalInfo.about}
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
-                  <FaEnvelope className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400" />
-                  <a href="mailto:manziniarchives@gmail.com" className="hover:text-primary-600 dark:hover:text-primary-400">
-                    manziniarchives@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
-                  <FaPhone className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400" />
-                  <a href="tel:+27760123729" className="hover:text-primary-600 dark:hover:text-primary-400">
-                    +27 76 012 3729
-                  </a>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
-                  <FaLinkedin className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400" />
-                  <a
-                    href="https://linkedin.com/in/musawenkosi-manzini"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    Musawenkosi Manzini
-                  </a>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
-                  <FaGithub className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400" />
-                  <a
-                    href="https://github.com/ManziniArchives"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    ManziniArchives
-                  </a>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
-                  <FaMapMarkerAlt className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400" />
-                  <span>South Africa</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Professional Summary */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Professional Summary
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Versatile Full-Stack Technology Specialist with over 4 years of experience spanning
-              software development, cybersecurity, data science, and cloud computing. Proven ability
-              to design, develop, and deploy robust software solutions while maintaining security
-              best practices and optimizing performance. Strong foundation in modern web technologies
-              with a passion for continuous learning and adapting to emerging technologies.
-            </p>
-          </motion.div>
-
-          {/* Key Skills */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Technical Skills</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {['language', 'frontend', 'backend', 'database'].map((category) => {
-                const categorySkills = skills.filter(s => s.category === category)
-                if (categorySkills.length === 0) return null
-
-                return (
-                  <div key={category}>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3 capitalize">
-                      {category === 'language' ? 'Programming Languages' : category}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {categorySkills.map((skill) => (
-                        <span
-                          key={skill.name}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                    </div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Sidebar (Left Column) */}
+          <motion.div
+            initial="visible"
+            animate="visible"
+            variants={fadeIn}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
+            {/* Contact Info */}
+            <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                <span className="w-1 h-6 bg-primary-500 rounded-full"></span>
+                Contact
+              </h3>
+              <div className="space-y-4">
+                <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-primary-600 dark:text-primary-500">
+                    <FaEnvelope />
                   </div>
-                )
-              })}
+                  <span className="text-sm break-all">{personalInfo.email}</span>
+                </a>
+                <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-green-600 dark:text-green-500">
+                    <FaPhone />
+                  </div>
+                  <span className="text-sm">{personalInfo.phone}</span>
+                </a>
+                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                  <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-red-600 dark:text-red-500">
+                    <FaMapMarkerAlt />
+                  </div>
+                  <span className="text-sm">Johannesburg, South Africa</span>
+                </div>
+                <a href={`https://linkedin.com/in/${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-blue-600 dark:text-blue-500">
+                    <FaLinkedin />
+                  </div>
+                  <span className="text-sm">LinkedIn Profile</span>
+                </a>
+                <a href={`https://github.com/${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-purple-600 dark:text-purple-500">
+                    <FaGithub />
+                  </div>
+                  <span className="text-sm">GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Skills Summary */}
+            <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                <span className="w-1 h-6 bg-secondary-500 rounded-full"></span>
+                Key Skills
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'SQL', 'AWS', 'Git', 'Tailwind CSS'].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium border border-gray-200 dark:border-white/5">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Languages */}
+            <div className="bg-white dark:bg-premium-gray p-6 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                <span className="w-1 h-6 bg-green-500 rounded-full"></span>
+                Languages
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-700 dark:text-gray-300">English</span>
+                  <span className="text-xs px-2 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded">Native</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-700 dark:text-gray-300">Zulu</span>
+                  <span className="text-xs px-2 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded">Native</span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
-          {/* Certifications */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <FaGraduationCap className="mr-3 text-primary-600 dark:text-primary-400" />
-              Professional Certifications
-            </h2>
-            <div className="space-y-4">
-              {certifications.slice(0, 6).map((cert) => (
-                <div key={cert.id} className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                  <h3 className="font-semibold text-gray-900 dark:text-white">
-                    {cert.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {cert.issuer} • {cert.date}
+          {/* Main Content (Right Column) */}
+          <motion.div
+            initial="visible"
+            animate="visible"
+            variants={fadeIn}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="lg:col-span-2 space-y-8"
+          >
+            {/* Professional Summary */}
+            <section className="bg-white dark:bg-premium-gray p-8 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+                <FaBriefcase className="text-primary-500" />
+                Professional Summary
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {personalInfo.about}
+              </p>
+            </section>
+
+            {/* Experience */}
+            <section className="bg-white dark:bg-premium-gray p-8 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                <FaProjectDiagram className="text-secondary-500" />
+                Experience
+              </h2>
+
+              <div className="space-y-8">
+                <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary-500 border-4 border-white dark:border-premium-gray"></div>
+                  <div className="mb-1">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Full Stack Developer</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">Freelance</p>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2023 - Present</p>
+                  <ul className="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>Developed and deployed multiple full-stack applications using Next.js, React, and Node.js.</li>
+                    <li>Implemented secure authentication systems and integrated third-party APIs.</li>
+                    <li>Optimized application performance and ensured responsive design across devices.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Education */}
+            <section className="bg-white dark:bg-premium-gray p-8 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                <FaGraduationCap className="text-green-500" />
+                Education
+              </h2>
+
+              <div className="space-y-8">
+                <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-premium-gray"></div>
+                  <div className="mb-1">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">BSc in Computer Science</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">University of South Africa</p>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2021 - 2024</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Major in Software Engineering and Data Science.
                   </p>
                 </div>
-              ))}
-              {certifications.length > 6 && (
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  ... and {certifications.length - 6} more certifications
-                </p>
-              )}
-            </div>
-          </motion.div>
-
-          {/* Projects Highlights */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <FaBriefcase className="mr-3 text-primary-600 dark:text-primary-400" />
-              Featured Projects
-            </h2>
-            <div className="space-y-6">
-              <div className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  Football Management System
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-2">
-                  A scouting system for identifying young football talents with advanced analytics and reporting capabilities.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {['JavaScript', 'CSS', 'HTML'].map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
               </div>
+            </section>
 
-              <div className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  Mpumalanga AI Pathfinder
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-2">
-                  Educational platform with AI-powered navigation and learning tools for students in Mpumalanga region.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {['Vite', 'TypeScript', 'React', 'Tailwind CSS'].map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            {/* Certifications Highlight */}
+            <section className="bg-white dark:bg-premium-gray p-8 rounded-2xl border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                <FaCode className="text-purple-500" />
+                Top Certifications
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  'CompTIA Security+',
+                  'AWS Certified Cloud Practitioner',
+                  'Google Data Analytics Professional',
+                  'Meta Front-End Developer'
+                ].map((cert, index) => (
+                  <div key={index} className="p-4 bg-gray-50 dark:bg-black/20 rounded-xl border border-gray-200 dark:border-white/5 flex items-center gap-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span className="text-gray-700 dark:text-gray-200 font-medium">{cert}</span>
+                  </div>
+                ))}
               </div>
-
-              <div className="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  Manzini Wanderlust
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-2">
-                  Travel and exploration platform featuring destination discovery and trip planning capabilities.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {['Vite', 'TypeScript', 'React', 'Tailwind CSS'].map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            </section>
           </motion.div>
-
-          {/* Call to Action */}
-          <motion.div variants={itemVariants} className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-8 border border-primary-200 dark:border-primary-700 text-center">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Interested in Working Together?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              I'm always open to discussing new opportunities, collaborations, or interesting projects.
-              Feel free to reach out through my contact form or directly via email.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/contact" variant="primary">
-                Contact Me
-              </Button>
-              <Button href={resumeUrl} target="_blank" variant="outline">
-                <FaDownload className="mr-2" />
-                View Full Resume
-              </Button>
-              <Button href={resumeUrl} download="Musawenkosi-Manzini-Resume.pdf" variant="outline">
-                <FaDownload className="mr-2" />
-                Download Full Resume
-              </Button>
-            </div>
-          </motion.div>
-        </motion.div>
+        </div>
       </Container>
 
       <Footer />

@@ -36,16 +36,15 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/80 dark:bg-premium-black/80 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none'
+        : 'bg-transparent'
+        }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-gradient">
-            MSM
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white tracking-tighter">
+            MSM<span className="text-primary-600 dark:text-primary-500">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,17 +53,16 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${
-                  pathname === item.href
-                    ? 'text-primary-600 dark:text-primary-400'
-                    : 'text-gray-700 dark:text-gray-300'
-                }`}
+                className={`relative text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${pathname === item.href
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
+                  }`}
               >
                 {item.name}
                 {pathname === item.href && (
                   <motion.div
                     layoutId="nav-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-500"
                     initial={false}
                     transition={{
                       type: "spring",
@@ -83,7 +81,7 @@ export default function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="p-2 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors"
             >
               {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
@@ -98,18 +96,17 @@ export default function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white dark:bg-premium-black border-b border-gray-200 dark:border-white/10"
             >
-              <div className="py-4 space-y-2 bg-white dark:bg-gray-900 rounded-lg mt-4">
+              <div className="py-4 space-y-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                      pathname === item.href
-                        ? 'text-primary-600 dark:text-primary-400 bg-gray-100 dark:bg-gray-800'
-                        : 'text-gray-700 dark:text-gray-300'
-                    }`}
+                    className={`block px-4 py-3 text-base font-medium transition-colors duration-200 ${pathname === item.href
+                      ? 'text-gray-900 dark:text-white bg-gray-50 dark:bg-white/5'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5'
+                      }`}
                   >
                     {item.name}
                   </Link>

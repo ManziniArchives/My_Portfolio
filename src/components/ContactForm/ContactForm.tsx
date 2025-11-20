@@ -73,26 +73,25 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
+      className="bg-premium-gray border border-white/5 rounded-2xl p-8"
     >
       <form onSubmit={formik.handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
             Name *
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FaUser className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <FaUser className="h-4 w-4 text-gray-500" />
             </div>
             <input
               type="text"
               id="name"
               name="name"
-              className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white ${
-                getFieldError('name')
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-gray-300 dark:border-gray-600'
-              }`}
+              className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 transition-all ${getFieldError('name')
+                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                  : 'border-white/10'
+                }`}
               placeholder="John Doe"
               value={formik.values.name}
               onChange={formik.handleChange}
@@ -101,29 +100,28 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             />
           </div>
           {getFieldError('name') && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+            <p className="mt-1.5 text-sm text-red-400">
               {getFieldError('name')}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
             Email *
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FaEnvelope className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <FaEnvelope className="h-4 w-4 text-gray-500" />
             </div>
             <input
               type="email"
               id="email"
               name="email"
-              className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white ${
-                getFieldError('email')
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-gray-300 dark:border-gray-600'
-              }`}
+              className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 transition-all ${getFieldError('email')
+                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                  : 'border-white/10'
+                }`}
               placeholder="john@example.com"
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -132,29 +130,28 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             />
           </div>
           {getFieldError('email') && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+            <p className="mt-1.5 text-sm text-red-400">
               {getFieldError('email')}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
             Message *
           </label>
           <div className="relative">
-            <div className="absolute top-3 left-3 pointer-events-none">
-              <FaCommentDots className="h-5 w-5 text-gray-400" />
+            <div className="absolute top-4 left-4 pointer-events-none">
+              <FaCommentDots className="h-4 w-4 text-gray-500" />
             </div>
             <textarea
               id="message"
               name="message"
               rows={6}
-              className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white resize-none ${
-                getFieldError('message')
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-gray-300 dark:border-gray-600'
-              }`}
+              className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 resize-none transition-all ${getFieldError('message')
+                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                  : 'border-white/10'
+                }`}
               placeholder="Your message here..."
               value={formik.values.message}
               onChange={formik.handleChange}
@@ -163,12 +160,12 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             />
           </div>
           {getFieldError('message') && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+            <p className="mt-1.5 text-sm text-red-400">
               {getFieldError('message')}
             </p>
           )}
-          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            {formik.values.message.length}/2000 characters
+          <p className="mt-1.5 text-xs text-gray-500 text-right">
+            {formik.values.message.length}/2000
           </p>
         </div>
 
@@ -177,18 +174,17 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`p-4 rounded-lg flex items-center space-x-3 ${
-              submitStatus.type === 'success'
-                ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
-            }`}
+            className={`p-4 rounded-xl flex items-center space-x-3 border ${submitStatus.type === 'success'
+                ? 'bg-green-500/10 border-green-500/20 text-green-400'
+                : 'bg-red-500/10 border-red-500/20 text-red-400'
+              }`}
           >
             {submitStatus.type === 'success' ? (
               <FaCheckCircle className="h-5 w-5 flex-shrink-0" />
             ) : (
               <FaExclamationCircle className="h-5 w-5 flex-shrink-0" />
             )}
-            <span className="text-sm">{submitStatus.message}</span>
+            <span className="text-sm font-medium">{submitStatus.message}</span>
           </motion.div>
         )}
 
@@ -196,7 +192,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           type="submit"
           variant="primary"
           disabled={formik.isSubmitting}
-          className="w-full flex items-center justify-center"
+          className="w-full flex items-center justify-center py-4 text-base"
         >
           {formik.isSubmitting ? (
             <>
@@ -208,18 +204,6 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           )}
         </Button>
       </form>
-
-      <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-          You can also reach me directly at{' '}
-          <a
-            href="mailto:manziniarchives@gmail.com"
-            className="text-primary-600 dark:text-primary-400 hover:underline"
-          >
-            manziniarchives@gmail.com
-          </a>
-        </p>
-      </div>
     </motion.div>
   )
 }
