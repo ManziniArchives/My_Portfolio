@@ -1,7 +1,7 @@
 "use client"
 
 import { Certification } from '@/types/certification'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { FaExternalLinkAlt, FaShieldAlt, FaCode, FaDatabase, FaCloud, FaBriefcase, FaServer } from 'react-icons/fa'
 
@@ -60,15 +60,16 @@ export default function CertificationCard({ certification }: CertificationCardPr
       </div>
 
       <Button
-        href={certification.verificationLink}
-        target="_blank"
+        asChild
         variant="outline"
         className="w-full group border-white/10 text-gray-300 hover:bg-white/5 hover:text-white hover:border-white/30"
       >
-        <span className="flex items-center justify-center">
-          View Certificate
-          <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-        </span>
+        <a href={certification.verificationLink} target="_blank">
+          <span className="flex items-center justify-center">
+            View Certificate
+            <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+          </span>
+        </a>
       </Button>
     </motion.div>
   )

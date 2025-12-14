@@ -1,7 +1,7 @@
 "use client"
 
 import { Project } from '@/types/project'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { FaGithub, FaStar, FaCodeBranch, FaCalendar } from 'react-icons/fa'
 
@@ -99,15 +99,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <Button
-          href={project.githubUrl}
-          target="_blank"
+          asChild
           variant="outline"
           className="w-full group border-white/10 text-gray-300 hover:bg-white/5 hover:text-white hover:border-white/30"
         >
-          <span className="flex items-center justify-center">
-            <FaGithub className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
-            View on GitHub
-          </span>
+          <a href={project.githubUrl} target="_blank">
+            <span className="flex items-center justify-center">
+              <FaGithub className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
+              View on GitHub
+            </span>
+          </a>
         </Button>
       </div>
     </motion.div>

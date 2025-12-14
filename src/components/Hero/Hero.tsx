@@ -2,7 +2,8 @@
 
 import { personalInfo } from '@/data/personalInfo'
 import ProfileImage from './ProfileImage'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const containerVariants = {
@@ -52,18 +53,16 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button
-                  href="/projects"
-                  variant="custom"
+                  asChild
                   className="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 shadow-md hover:shadow-lg"
                 >
-                  View Selected Works
+                  <Link href="/projects">View Selected Works</Link>
                 </Button>
                 <Button
-                  href="/contact"
-                  variant="custom"
+                  asChild
                   className="w-full sm:w-auto border-2 border-gray-300 dark:border-white/20 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10"
                 >
-                  Let's Talk
+                  <Link href="/contact">Let's Talk</Link>
                 </Button>
               </div>
             </motion.div>

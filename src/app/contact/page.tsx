@@ -40,7 +40,7 @@ const contactInfo = [
   {
     icon: FaMapMarkerAlt,
     label: 'Location',
-    value: 'Johannesburg, South Africa',
+    value: 'Pretoria, South Africa',
     href: null,
     color: 'text-red-500'
   }

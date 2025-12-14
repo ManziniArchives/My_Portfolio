@@ -6,7 +6,7 @@ import Footer from '@/components/Footer/Footer'
 import { motion } from 'framer-motion'
 import { FaDownload, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaCode, FaProjectDiagram } from 'react-icons/fa'
 import { personalInfo } from '@/data/personalInfo'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -36,12 +36,14 @@ export default function Resume() {
             </p>
           </div>
           <Button
-            href="/resume.pdf"
-            variant="primary"
+            asChild
+            variant="default"
             className="flex items-center gap-2 shadow-lg shadow-primary-600/20"
           >
-            <FaDownload />
-            Download Resume
+            <a href="/resume/Musawenkosi Manzini Resume..pdf" download target="_blank" rel="noopener noreferrer">
+              <FaDownload />
+              Download Resume
+            </a>
           </Button>
         </motion.div>
 
@@ -77,7 +79,7 @@ export default function Resume() {
                   <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-red-600 dark:text-red-500">
                     <FaMapMarkerAlt />
                   </div>
-                  <span className="text-sm">Johannesburg, South Africa</span>
+                  <span className="text-sm">Pretoria, South Africa</span>
                 </div>
                 <a href={`https://linkedin.com/in/${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   <div className="p-2 bg-gray-100 dark:bg-black/20 rounded-lg text-blue-600 dark:text-blue-500">
@@ -182,12 +184,14 @@ export default function Resume() {
                 <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-premium-gray"></div>
                   <div className="mb-1">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">BSc in Computer Science</h3>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium">University of South Africa</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Diploma In Computer Science</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">Tshwane University Of Technology</p>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2021 - 2024</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2023 - 2025</p>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Major in Software Engineering and Data Science.
+                    Relevant coursework includes Software Programming, Mobile Device Programming,
+                    Database Design and System Analysis.Actively participating in knowledge-sharing initiatives and projects to enhance technical
+                    expertise and stay updated with industry needs.
                   </p>
                 </div>
               </div>
@@ -202,10 +206,10 @@ export default function Resume() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  'CompTIA Security+',
-                  'AWS Certified Cloud Practitioner',
-                  'Google Data Analytics Professional',
-                  'Meta Front-End Developer'
+                  'Oracle Cloud Infrastructure 2025 Certified Developer Professional',
+                  'Software Engineer (HackerRank)',
+                  'Back End Development and APIs (freeCodeCamp)',
+                  'Data Analytics Essentials (Credly)'
                 ].map((cert, index) => (
                   <div key={index} className="p-4 bg-gray-50 dark:bg-black/20 rounded-xl border border-gray-200 dark:border-white/5 flex items-center gap-3">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>

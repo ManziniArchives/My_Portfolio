@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { sendEmail, EmailData } from '@/utils/emailService'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { FaEnvelope, FaUser, FaCommentDots, FaSpinner, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
@@ -89,8 +89,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
               id="name"
               name="name"
               className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 transition-all ${getFieldError('name')
-                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
-                  : 'border-white/10'
+                ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                : 'border-white/10'
                 }`}
               placeholder="John Doe"
               value={formik.values.name}
@@ -119,8 +119,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
               id="email"
               name="email"
               className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 transition-all ${getFieldError('email')
-                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
-                  : 'border-white/10'
+                ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                : 'border-white/10'
                 }`}
               placeholder="john@example.com"
               value={formik.values.email}
@@ -149,8 +149,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
               name="message"
               rows={6}
               className={`block w-full pl-11 pr-4 py-3.5 bg-black/20 border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary-500/50 focus:border-primary-500/50 text-white placeholder-gray-600 resize-none transition-all ${getFieldError('message')
-                  ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
-                  : 'border-white/10'
+                ? 'border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50'
+                : 'border-white/10'
                 }`}
               placeholder="Your message here..."
               value={formik.values.message}
@@ -175,8 +175,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className={`p-4 rounded-xl flex items-center space-x-3 border ${submitStatus.type === 'success'
-                ? 'bg-green-500/10 border-green-500/20 text-green-400'
-                : 'bg-red-500/10 border-red-500/20 text-red-400'
+              ? 'bg-green-500/10 border-green-500/20 text-green-400'
+              : 'bg-red-500/10 border-red-500/20 text-red-400'
               }`}
           >
             {submitStatus.type === 'success' ? (
@@ -190,7 +190,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         <Button
           type="submit"
-          variant="primary"
+          variant="default"
           disabled={formik.isSubmitting}
           className="w-full flex items-center justify-center py-4 text-base"
         >
