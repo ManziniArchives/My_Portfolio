@@ -17,11 +17,13 @@ type MenuProps = {
 
 const Menu = ({ list }: MenuProps) => {
     const [hovered, setHovered] = useState<number | null>(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
         <MotionConfig transition={{ bounce: 0, type: 'tween' }}>
-            <nav className={'relative'}>
-                <ul className={'flex items-center'}>
+            <nav className={'relative flex items-center justify-between'}>
+                {/* Desktop Menu */}
+                <ul className={'hidden md:flex items-center'}>
                     {list?.map((item) => {
                         return (
                             <li key={item.id} className={'relative'}>
@@ -80,6 +82,40 @@ const Menu = ({ list }: MenuProps) => {
                         );
                     })}
                 </ul>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden p-2 text-foreground"
+                    onClick={() => setMobileOpen(!mobileOpen)}
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {mobileOpen ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        )}
+                    </svg>
+                </button>
+
+                {/* Mobile Menu Dropdown */}
+                {mobileOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute top-16 right-0 left-0 bg-background border rounded-lg shadow-lg md:hidden z-50 p-4 flex flex-col gap-2"
+                    >
+                        {list?.map((item) => (
+                            <Link
+                                key={item.id}
+                                href={item.url}
+                                className="px-4 py-3 rounded hover:bg-foreground/5"
+                                onClick={() => setMobileOpen(false)}
+                            >
+                                {item.title}
+                            </Link>
+                        ))}
+                    </motion.div>
+                )}
             </nav>
         </MotionConfig>
     );

@@ -44,7 +44,7 @@ export default function Hero() {
               <h2 className="text-primary-600 dark:text-primary-500 font-medium tracking-wide uppercase mb-4">
                 {personalInfo.title}
               </h2>
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
                 {personalInfo.name}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl">
