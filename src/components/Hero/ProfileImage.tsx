@@ -6,7 +6,7 @@ import { FiUser, FiCamera } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 
 export default function ProfileImage() {
-  const [usePhoto, setUsePhoto] = useState(false)
+  const [usePhoto, setUsePhoto] = useState(true)
 
   const initials = 'MSM'
 
@@ -20,7 +20,7 @@ export default function ProfileImage() {
         {usePhoto ? (
           <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500 shadow-xl">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.JPG"
               alt="Musawenkosi Manzini"
               fill
               className="object-cover"
