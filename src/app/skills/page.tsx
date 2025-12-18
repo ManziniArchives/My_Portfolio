@@ -51,7 +51,7 @@ export default function Skills() {
 
     return filtered.sort((a, b) => {
       if (sortBy === 'proficiency') return b.proficiency - a.proficiency
-      if (sortBy === 'experience') return parseInt(b.yearsOfExperience) - parseInt(a.yearsOfExperience)
+      if (sortBy === 'experience') return parseInt(b.experience || '0') - parseInt(a.experience || '0')
       return a.name.localeCompare(b.name)
     })
   }, [selectedCategory, sortBy])
