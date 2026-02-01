@@ -40,7 +40,7 @@ export default function Resume() {
             variant="default"
             className="flex items-center gap-2 shadow-lg shadow-primary-600/20"
           >
-            <a href="/resume/Musawenkosi Manzini Resume..pdf" download target="_blank" rel="noopener noreferrer">
+            <a href="/resume/Musawenkosi Sibusiso Manzini's CV..pdf" download target="_blank" rel="noopener noreferrer">
               <FaDownload />
               Download Resume
             </a>
