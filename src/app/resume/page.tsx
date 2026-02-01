@@ -160,14 +160,15 @@ export default function Resume() {
                 <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary-500 border-4 border-white dark:border-premium-gray"></div>
                   <div className="mb-1">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Full Stack Developer</h3>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium">Freelance</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Junior Software Developer</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">Informatics Community Engagement Programme (ICEP) | Tshwane University of Technology Emalahleni</p>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2023 - Present</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">JULY 2025 – DECEMBER 2025</p>
                   <ul className="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>Developed and deployed multiple full-stack applications using Next.js, React, and Node.js.</li>
-                    <li>Implemented secure authentication systems and integrated third-party APIs.</li>
-                    <li>Optimized application performance and ensured responsive design across devices.</li>
+                    <li>Developed full-stack Smart Events platform to digitize TUT campus event management, including venue bookings, registrations and communications.</li>
+                    <li>Built ReactJS web features, React Native for mobile and Node.js API integrations for seamless cross-platform functionality</li>
+                    <li>Led testing efforts and served as Scrum Master during MAISH Hackathon.</li>
+                    <li>Earned Top Frontend Developer certificate for high-quality prototypes and cross-platform work</li>
                   </ul>
                 </div>
               </div>
