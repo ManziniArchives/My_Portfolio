@@ -20,7 +20,7 @@ export default function ProfileImage() {
         {usePhoto ? (
           <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500 shadow-xl">
             <Image
-              src="/images/profile.JPG"
+              src="/images/Manzini.jpg"
               alt="Musawenkosi Manzini"
               fill
               className="object-cover"
