@@ -53,7 +53,7 @@ export default function Home() {
                 <FaGithub className="w-8 h-8" />
               </Link>
               <Link
-                href="https://linkedin.com/in/musawenkosi-manzini"
+                href="https://www.linkedin.com/in/musawenkosimanzini"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
@@ -61,7 +61,7 @@ export default function Home() {
                 <FaLinkedin className="w-8 h-8" />
               </Link>
               <Link
-                href="mailto:manziniarchives@gmail.com"
+                href="mailto:manzini.msm@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
                 <FaEnvelope className="w-8 h-8" />

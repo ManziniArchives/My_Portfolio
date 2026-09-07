@@ -27,7 +27,7 @@ const contactInfo = [
     icon: FaLinkedin,
     label: 'LinkedIn',
     value: personalInfo.linkedin,
-    href: 'https://linkedin.com/in/musawenkosi-manzini',
+    href: 'https://www.linkedin.com/in/musawenkosimanzini',
     color: 'text-blue-600'
   },
   {

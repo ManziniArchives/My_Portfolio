@@ -35,7 +35,7 @@ export default function Footer() {
                 <FaGithub className="w-6 h-6" />
               </Link>
               <Link
-                href="https://linkedin.com/in/musawenkosi-manzini"
+                href="https://www.linkedin.com/in/musawenkosimanzini"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -44,7 +44,7 @@ export default function Footer() {
                 <FaLinkedin className="w-6 h-6" />
               </Link>
               <Link
-                href="mailto:manziniarchives@gmail.com"
+                href="mailto:manzini.msm@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="Email"
               >
@@ -107,10 +107,10 @@ export default function Footer() {
               <p className="flex flex-col">
                 <span className="font-medium text-white mb-1">Email</span>
                 <a
-                  href="mailto:manziniarchives@gmail.com"
+                  href="mailto:manzini.msm@gmail.com"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  manziniarchives@gmail.com
+                  manzini.msm@gmail.com
                 </a>
               </p>
               <p className="flex flex-col">

@@ -23,7 +23,7 @@ export const sendEmail = async (data: EmailData): Promise<{ success: boolean; me
       from_email: data.email,
       message: data.message,
       to_name: 'Musawenkosi Manzini',
-      to_email: 'manziniarchives@gmail.com',
+      to_email: 'manzini.msm@gmail.com',
     }
 
     const response = await emailjs.send(
@@ -44,7 +44,7 @@ export const sendEmail = async (data: EmailData): Promise<{ success: boolean; me
     console.error('Email service error:', error)
     return {
       success: false,
-      message: 'Failed to send message. Please try again later or contact me directly at manziniarchives@gmail.com'
+      message: 'Failed to send message. Please try again later or contact me directly at manzini.msm@gmail.com'
     }
   }
 }

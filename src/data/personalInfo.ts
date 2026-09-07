@@ -23,9 +23,9 @@
 export const personalInfo = {
   name: 'Musawenkosi Sibusiso Manzini',
   title: 'Full-Stack Technology Specialist',
-  email: 'manziniarchives@gmail.com',
+  email: 'manzini.msm@gmail.com',
   phone: '0760123729',
-  linkedin: 'Musawenkosi Manzini',
+  linkedin: 'musawenkosimanzini',
   github: 'ManziniArchives',
   intro: `Hi, I'm Musawenkosi, a passionate all-rounder tech enthusiast with a knack for solving complex problems through technology. Whether it's building robust software solutions, analyzing data for insights, securing applications, or working with databases, I strive to create impact and innovation in everything I do.`,
   about: `I am a versatile technology professional with expertise spanning Full Stack Development, Software Engineering, Cybersecurity, Data Science, and Database Management. With a strong foundation in modern web technologies and a passion for continuous learning, I bring a comprehensive approach to solving complex technical challenges.
