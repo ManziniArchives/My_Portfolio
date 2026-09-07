@@ -185,6 +185,18 @@ export default function Resume() {
                 <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-premium-gray"></div>
                   <div className="mb-1">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Advanced Diploma In Computer Science</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">Tshwane University Of Technology</p>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">2026 - Current</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Advanced studies in Computer Science, focusing on expanding technical expertise and modern software development practices.
+                  </p>
+                </div>
+
+                <div className="relative pl-8 border-l-2 border-gray-200 dark:border-white/10">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-premium-gray"></div>
+                  <div className="mb-1">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">Diploma In Computer Science</h3>
                     <p className="text-primary-600 dark:text-primary-400 font-medium">Tshwane University Of Technology</p>
                   </div>
